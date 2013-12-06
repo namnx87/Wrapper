@@ -1,0 +1,38 @@
+Source code of Wrapper.
+
+Wrapper is used hashed the CCNx content name into IP destination field, that can be forwarded and monitored by OpenFlow switches.
+
+
+
+BUILD
+
+cd ./Debug
+make
+
+
+HOW TO RUN
+
+Start CCNx.
+ccndc add / udp 127.0.0.1 8888;#Forwarding entry from CCNx to Wrapper.
+./Debug/Wrapper -i [raw socket interface] -p [ccnd port]
+
+
+Press Ctrl + C to stop.
+
+
+HOW TO TEST 
+use Wireshark to capture the packets produced by Wrapper.
+
+
+DEMONSTRATION
+Video: http://www.youtube.com/watch?v=Picg9RHEie0
+Source code Demo: SDNCCNDemo2.py
+
+
+
+
+
+
+
+
+
