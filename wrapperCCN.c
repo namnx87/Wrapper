@@ -802,7 +802,8 @@ int send_to_of_switch(const char* payload, const int payload_size, int hash_name
 }
 
 
-
+//You can changed to other function you prefer (str -> int)
+//http://www.cse.yorku.ca/~oz/hash.html
 /**
  * Hash function djb2
  * @param str
