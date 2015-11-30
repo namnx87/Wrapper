@@ -1,6 +1,6 @@
 Source code of Wrapper.
 
-Wrapper is used hashed the CCNx content name into IP destination field, that can be forwarded and monitored by OpenFlow switches.
+Wrapper is used hashed the CCNx content name into IP destination field using djb2 [1], that can be forwarded and monitored by OpenFlow switches.
 
 
 
@@ -8,6 +8,7 @@ BUILD
 
 cd ./Debug
 make
+
 
 
 HOW TO RUN
@@ -29,7 +30,19 @@ Video: http://www.youtube.com/watch?v=Picg9RHEie0
 Source code Demo: SDNCCNDemo2.py
 
 
+[1] http://www.cse.yorku.ca/~oz/hash.html
 
+  unsigned long
+    hash(unsigned char *str)
+    {
+        unsigned long hash = 5381;
+        int c;
+
+        while (c = *str++)
+            hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+
+        return hash;
+    }
 
 
 
